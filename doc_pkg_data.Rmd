@@ -1,0 +1,26 @@
+---
+title: "Document Pkg Data"
+output: html_notebook
+---
+
+# Intro
+
+- This is the recipe I have used to document data for my R packages. The reason I struggled with this is because I failed to clean up my notes on making R packages and so scrambled with this issue till i finally decided to make some template I could follow each time i developed a package.
+
+## Init
+
+- File(s) needs to be copied into extdata before this process can be
+accomplished. For R developers this should not be a problem.
+
+## How I add my data
+```{r}
+fpath <- system.file("extdata", "dat_3.dat", package = "normfluodbf", mustWork = TRUE)
+dat_3 <- read.table(fpath) #read data in for use with use_dat
+use_data_raw(name=fpath)
+usethis::use_data(dat_3)
+document()
+```
+
+## Exit
+
+- Rename prep file in data raw

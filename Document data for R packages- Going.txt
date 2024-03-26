@@ -1,0 +1,9 @@
+Document data for R packages- Going into Rpubs
+
+File needs to be copied into extdata before this process can be accomplished
+1. fpath <- system.file("extdata", "dat_3.dat", package = "normfluodbf", mustWork = TRUE)
+2. dat_3 <- read.table(fpath) #read data in for use with use_dat
+3. use_data_raw(name=fpath)
+4. usethis::use_data(dat_3)
+5. document()
+6. rename prep file in data raw
