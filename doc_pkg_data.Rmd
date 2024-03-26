@@ -21,6 +21,46 @@ usethis::use_data(dat_3)
 document()
 ```
 
+## tidyDenovix
+```{r}
+#txt
+dir = paste0(getwd(),'/data-raw')
+fpath = paste0(dir,"/spec.txt")
+fpath <- system.file("extdata", "spec.txt", package = "tidyDenovix", mustWork = TRUE)
+spec <- utils::read.table(fpath)
+use_data_raw(name=fpath)
+usethis::use_data(spec)
+document()
+#rename prep file in data raw
+
+#excel
+library(readxl)
+dir = paste0(getwd(),'/data-raw')
+fpath = paste0(dir,"/rnaspec_1.xlsx")
+#fpath <- system.file("extdata", "rnaspec_1.xlsx", package = "tidyDenovix", mustWork = TRUE)
+rna1 <- read_excel(fpath)
+use_data_raw(name=fpath)
+usethis::use_data(rna1)
+document()
+
+#csv
+dir = paste0(getwd(),'/data-raw')
+fpath = paste0(dir,"/rnaspec2018.csv")
+#fpath <- system.file("extdata", "rnaspec2018.csv", package = "tidyDenovix", mustWork = TRUE)
+rna2 <- read.csv(fpath)
+use_data_raw(name=fpath)
+usethis::use_data(rna2)
+document()
+
+dir = paste0(getwd(),'/data-raw')
+fpath = paste0(dir,"/spec.csv")
+fpath <- system.file("extdata", "spec.csv", package = "tidyDenovix", mustWork = TRUE)
+rna3 <- read.csv(fpath)
+use_data_raw(name=fpath)
+usethis::use_data(rna3)
+document()
+```
+
 ## Exit
 
 - Rename prep file in data raw
